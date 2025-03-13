@@ -1,47 +1,97 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  direction: rtl;
 }
 
-header {
-    padding: 10px;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #131313;
+  padding: 10px;
+}
+
+.icon img {
+  width: 24px;
+  filter: invert(100%);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff2e63;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.hero-banner {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #202020, #2c2c2c);
+}
+
+.hero-text h2 {
+  color: #b8ff00;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  padding: 10px;
 }
 
 .categories button {
-    background: #ff0;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.categories button:hover {
+  background-color: #b8ff00;
+  color: #000;
 }
 
-.product {
-    background: #222;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 150px;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
-button {
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-    background: #0f0;
-    border: none;
+.product-card {
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
 }
 
-.cart {
-    background: #333;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 10px;
+.product-card img {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  color: #b8ff00;
+}
+
+.product-card button {
+  background-color: #b8ff00;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
 }
