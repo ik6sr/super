@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سوبر ماركت</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سوبر ماركت إلكتروني</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h2>مرحباً بك في السوبر ماركت 🛒</h2>
-        <input type="text" id="search" placeholder="بحث عن منتج..." oninput="searchProduct()">
-    </header>
+  <!-- رأس الصفحة -->
+  <header>
+    <div class="top-bar">
+      <div class="greeting">مرحباً بك في متجرنا</div>
+      <div class="icons">
+        <span class="icon" onclick="showSection('cart')">
+          <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="سلة المشتريات">
+          <span class="cart-count" id="cart-count">0</span>
+        </span>
+      </div>
+    </div>
+  </header>
 
-    <section class="categories">
-        <button class="active" onclick="filterProducts('all')">الكل</button>
-        <button onclick="filterProducts('خضار')">خضار</button>
-        <button onclick="filterProducts('فاكهة')">فاكهة</button>
-        <button onclick="filterProducts('ألبان')">ألبان</button>
-        <button onclick="filterProducts('مشروبات')">مشروبات</button>
+  <!-- بانر العروض -->
+  <div class="hero-banner">
+    <div class="hero-text">
+      <h2>عروض اليوم!</h2>
+      <p>اطلب الآن واستمتع بخصومات مميزة</p>
+    </div>
+  </div>
+
+  <!-- التصنيفات (تحديث تلقائي من Google Sheets) -->
+  <nav class="categories" id="categories"></nav>
+
+  <!-- المنتجات -->
+  <main>
+    <section id="home-section">
+      <div class="product-grid" id="product-grid"></div>
     </section>
 
-    <section id="products" class="products">
-        <!-- سيتم تحميل المنتجات من Google Sheets -->
+    <!-- السلة -->
+    <section id="cart-section" class="hidden">
+      <h2>سلة المشتريات</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary" id="cart-summary">الإجمالي: 0</div>
+      <button class="checkout-btn" onclick="placeOrder()">إتمام الطلب</button>
     </section>
+  </main>
 
-    <section id="cart" class="cart">
-        <h3>🛒 السلة</h3>
-        <ul id="cart-items"></ul>
-        <p>الإجمالي: <span id="total-price">0</span> ل.س</p>
-        <button onclick="confirmOrder()">تأكيد الطلب</button>
-    </section>
+  <!-- تذييل -->
+  <footer>
+    <div class="bottom-nav">
+      <button onclick="showSection('home')">الرئيسية</button>
+    </div>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
