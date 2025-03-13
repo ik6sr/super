@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الطعام</title>
+    <title>سوبر ماركت</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
 
     <header>
-        <h2>مرحباً بك 👋</h2>
-        <input type="text" id="search" placeholder="بحث...">
+        <h2>مرحباً بك في السوبر ماركت 🛒</h2>
+        <input type="text" id="search" placeholder="بحث عن منتج..." oninput="searchProduct()">
     </header>
 
     <section class="categories">
         <button class="active" onclick="filterProducts('all')">الكل</button>
-        <button onclick="filterProducts('بيتزا')">بيتزا</button>
-        <button onclick="filterProducts('برجر')">برجر</button>
-        <button onclick="filterProducts('سندوتشات')">سندوتشات</button>
+        <button onclick="filterProducts('خضار')">خضار</button>
+        <button onclick="filterProducts('فاكهة')">فاكهة</button>
+        <button onclick="filterProducts('ألبان')">ألبان</button>
+        <button onclick="filterProducts('مشروبات')">مشروبات</button>
     </section>
 
     <section id="products" class="products">
-        <!-- سيتم تحميل المنتجات من Google Sheets هنا -->
+        <!-- سيتم تحميل المنتجات من Google Sheets -->
     </section>
 
-    <footer>
+    <section id="cart" class="cart">
+        <h3>🛒 السلة</h3>
+        <ul id="cart-items"></ul>
+        <p>الإجمالي: <span id="total-price">0</span> ل.س</p>
         <button onclick="confirmOrder()">تأكيد الطلب</button>
-    </footer>
+    </section>
 
 </body>
 </html>
