@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تأكيد الطلب عبر واتساب</title>
+    <title>متجر الطعام</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>تأكيد الطلب عبر واتساب</h1>
-    <button id="confirmBtn">تأكيد الطلب</button>
+
+    <header>
+        <h2>مرحباً بك 👋</h2>
+        <input type="text" id="search" placeholder="بحث...">
+    </header>
+
+    <section class="categories">
+        <button class="active" onclick="filterProducts('all')">الكل</button>
+        <button onclick="filterProducts('بيتزا')">بيتزا</button>
+        <button onclick="filterProducts('برجر')">برجر</button>
+        <button onclick="filterProducts('سندوتشات')">سندوتشات</button>
+    </section>
+
+    <section id="products" class="products">
+        <!-- سيتم تحميل المنتجات من Google Sheets هنا -->
+    </section>
+
+    <footer>
+        <button onclick="confirmOrder()">تأكيد الطلب</button>
+    </footer>
+
 </body>
 </html>
